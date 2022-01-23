@@ -13,6 +13,12 @@ namespace BankAccount.Entities
         public int Number { get; set; }
         public double Balance { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="balance"></param>
+        /// <param name="ownerAccount"></param>
         public Account(int number,  double balance, Person ownerAccount)
         {
             Number = number;
@@ -20,13 +26,20 @@ namespace BankAccount.Entities
             OwnerAccount = ownerAccount;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return base.ToString() + $"({Number} , {Balance}, {OwnerAccount})";
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
         public void WithDraw(double amount)
     {
         if (amount > Balance || amount <= 0)
@@ -40,6 +53,11 @@ namespace BankAccount.Entities
                 + amount + "€ - Current Balace: " + Balance + "€");
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
         public void deposit(double amount)
         {
             if (amount <= 0)
