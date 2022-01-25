@@ -33,7 +33,9 @@ namespace BankAccount.Entities
         }
 
         public Person()
-        {}
+        {
+     
+        }
 
 
         /// <summary>
@@ -53,6 +55,8 @@ namespace BankAccount.Entities
             }
 
         }
+
+
         /// <summary>
         /// 
         /// </summary>

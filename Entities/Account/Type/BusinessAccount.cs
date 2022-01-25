@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankAccount.Entities.Type
 {
-    class BusinessAccount : Account
+    class BusinessAccount : Accounts
     {
 
 
@@ -57,6 +57,16 @@ namespace BankAccount.Entities.Type
 
             Console.WriteLine("Unauthorized Loan");
 
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.ToString() + $"LoanLimit: {LoanLimit}, Account(Number: {Number },Balance: {Balance}, OwnerAccount: {OwnerAccount})";
         }
     }
 }
