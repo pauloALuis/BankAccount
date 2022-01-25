@@ -9,9 +9,9 @@ namespace BankAccount.Entities
     class Account
     {
 
-        public Person OwnerAccount { get; set; }
-        public int Number { get; set; }
-        public double Balance { get; set; }
+        public Person OwnerAccount { get; protected set; }
+        protected int Number { get; set; }
+        public double Balance { get;protected set; }
 
         /// <summary>
         /// 
@@ -25,6 +25,12 @@ namespace BankAccount.Entities
             Balance = balance;
             OwnerAccount = ownerAccount;
         }
+
+        public Account()
+        {
+        }
+
+
 
         /// <summary>
         /// 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankAccount.Entities.Type;
+using System;
 
 namespace BankAccount
 {
@@ -6,7 +7,8 @@ namespace BankAccount
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BusinessAccount businessAccount = new BusinessAccount();
+            Console.WriteLine("Hello World!" + businessAccount);
         }
     }
 }

@@ -9,13 +9,20 @@ namespace BankAccount.Entities
 {
     class Person
     {
-        public string IdPerson { get; set; }
+        internal string IdPerson { get; set; }
 
         private string _firstName;
         private string _lastName;
-        private string _birthDate;
-        private Gender _typeGener;
-
+        private protected string _birthDate;
+        protected Gender _typeGener;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idPerson"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="birthDate"></param>
+        /// <param name="typeGener"></param>
         public Person(string idPerson, string firstName, string lastName, string birthDate, Gender typeGener)
         {
             IdPerson = idPerson;
@@ -25,6 +32,13 @@ namespace BankAccount.Entities
             _typeGener = typeGener;
         }
 
+        public Person()
+        {}
+
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string FullName { 
             get { return _firstName +" "+ _lastName;  }
             set
@@ -39,7 +53,10 @@ namespace BankAccount.Entities
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Person</returns>
         public override string ToString()
         {
             return $"Person ({IdPerson}, {FullName}, {_birthDate}, {_typeGener})";
