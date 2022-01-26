@@ -59,6 +59,24 @@ namespace BankAccount.Entities
         /// 
         /// </summary>
         /// <param name="amount"></param>
+        public virtual void WithDrawWithTax(double amount)
+        {
+            if (amount > Balance || amount <= 0)
+            {
+                Console.WriteLine("Unauthorized withdrawal");
+                return;
+
+            }
+            Balance -= amount + 5.0;
+            Console.WriteLine("Authorized Withdrawal\n Amount: "
+                + amount + "€ - Current Balace: " + Balance + "€");
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
         public void deposit(double amount)
         {
             if (amount <= 0)

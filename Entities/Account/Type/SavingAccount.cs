@@ -30,6 +30,18 @@ namespace BankAccount.Entities.Account.Type
             Balance += Balance * InterestRate;
         }
 
+        public override void WithDrawWithTax(double amount)
+        {
+            Balance -= amount;
+            base.WithDrawWithTax(amount);
+        }
+
+        /* public override void WithDrawWithTax(double amount)
+         {
+             Balance -= amount;
+            // base.WithDraw1(amount);
+         }*/
+
         public override string ToString()
         {
             return base.ToString() + $" (UpdateBalance: {Balance} , InterestRate: {InterestRate}  )";
